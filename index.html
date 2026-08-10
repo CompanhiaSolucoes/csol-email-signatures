@@ -839,6 +839,7 @@
     .sig-logo-dark { display: block !important; }
     .sig-sep-light { display: none !important; }
     .sig-sep-dark { display: block !important; }
+    .sig-divider { border-top-color: #3a3a3a !important; }
   }
   [data-ogsc] .sig-name { color: #f5f5f5 !important; }
   [data-ogsc] .sig-role { color: #c8c8c8 !important; }
@@ -850,6 +851,7 @@
   [data-ogsc] .sig-logo-dark { display: block !important; }
   [data-ogsc] .sig-sep-light { display: none !important; }
   [data-ogsc] .sig-sep-dark { display: block !important; }
+  [data-ogsc] .sig-divider { border-top-color: #3a3a3a !important; }
 </style>`;
 
     const addressBlock = office.addressLines.map(l =>
@@ -913,6 +915,12 @@
         <!--<![endif]-->
       </a>`;
 
+    const disclaimerBlock = `
+      <div class="sig-muted sig-divider" style="font-family:Arial,Helvetica,sans-serif; font-size:8.5px; line-height:1.5; color:#999999; border-top:1px solid #e0e0e0; padding-top:8px;">
+        Confidencial - dirigido exclusivamente ao destinatário. Reencaminhamento, partilha ou divulgação proibidos sem autorização escrita do remetente.<br>
+        Confidential - for the intended recipient only. Forwarding, sharing, or disclosure without the sender's written consent is prohibited.
+      </div>`;
+
     const separatorBlock = `
       <img src="${CDN_BASE}/separator.png" alt="" width="2" height="120" class="sig-sep-light" style="display:none; border:0; outline:none; text-decoration:none; width:2px; height:120px;">
       <!--[if !mso]><!-->
@@ -963,6 +971,11 @@
           </td>
         </tr>
       </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" style="padding:14px 0 0 0;">
+      ${disclaimerBlock}
     </td>
   </tr>
 </table>`;
